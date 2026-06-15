@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Tècnica – Pla Corresponsables 2026 | Adrià Fradera Raya</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --sage: #5A7A6A;
+    --sage-light: #EAF0EC;
+    --sage-mid: #C2D4C9;
+    --ink: #1C2420;
+    --ink-soft: #3D4F49;
+    --sand: #F7F4EF;
+    --white: #FFFFFF;
+    --rule: #D4DDD8;
+    --accent: #C17A3A;
+    --accent-light: #F5EBE0;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--sand);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--ink);
+    color: var(--white);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 56px 32px 48px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage-mid);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .header-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--sage-mid);
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 46px);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--white);
+    margin-bottom: 12px;
+    max-width: 680px;
+  }
+
+  .header-sub {
+    font-size: 15px;
+    color: var(--sage-mid);
+    margin-bottom: 36px;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+  }
+
+  .header-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 28px;
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .meta-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage-mid);
+  }
+
+  .meta-value {
+    font-size: 14px;
+    color: var(--white);
+    font-weight: 400;
+  }
+
+  .meta-value a {
+    color: var(--white);
+    text-decoration: none;
+  }
+  .meta-value a:hover { text-decoration: underline; }
+
+  /* DECORATIVE BG */
+  .header-deco {
+    position: absolute;
+    right: -60px;
+    top: -60px;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    border: 1px solid rgba(90,122,106,0.2);
+    pointer-events: none;
+  }
+  .header-deco-2 {
+    position: absolute;
+    right: 60px;
+    top: 60px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 1px solid rgba(90,122,106,0.12);
+    pointer-events: none;
+  }
+
+  /* NAV TABS */
+  .nav-wrapper {
+    background: var(--white);
+    border-bottom: 1px solid var(--rule);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(28,36,32,0.06);
+  }
+
+  nav {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+
+  .nav-tab {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    padding: 16px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-tab:hover { color: var(--sage); }
+
+  .nav-tab.active {
+    color: var(--sage);
+    border-bottom-color: var(--sage);
+    font-weight: 600;
+  }
+
+  /* MAIN CONTENT */
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 32px 80px;
+  }
+
+  .tab-section {
+    display: none;
+    animation: fadeIn 0.3s ease;
+  }
+  .tab-section.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* SECTION TITLES */
+  .section-head {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 40px;
+  }
+
+  .section-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.25;
+  }
+
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+
+  h4 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+    font-size: 15px;
+  }
+
+  /* CARD */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+  }
+
+  .card-accent {
+    border-left: 3px solid var(--sage);
+    background: var(--white);
+  }
+
+  /* INTRO HIGHLIGHT */
+  .intro-highlight {
+    background: var(--sage-light);
+    border-radius: 8px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    border-left: 4px solid var(--sage);
+  }
+
+  .intro-highlight p {
+    color: var(--ink);
+    margin-bottom: 0;
+    font-size: 15.5px;
+    line-height: 1.8;
+  }
+
+  /* OBJECTIVE LIST */
+  .obj-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 0;
+  }
+
+  .obj-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  .obj-list li::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--sage);
+    margin-top: 9px;
+    flex-shrink: 0;
+  }
+
+  /* DESTINATARIS */
+  .dest-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 640px) {
+    .dest-grid { grid-template-columns: 1fr; }
+  }
+
+  .dest-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 24px 24px;
+  }
+
+  .dest-label {
+    display: inline-block;
+    background: var(--sage);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 3px;
+    margin-bottom: 14px;
+  }
+
+  /* MODULES / SESSIONS */
+  .modul-block {
+    margin-bottom: 40px;
+  }
+
+  .modul-header {
+    background: var(--ink);
+    color: var(--white);
+    border-radius: 8px 8px 0 0;
+    padding: 20px 28px;
+  }
+
+  .modul-header .modul-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage-mid);
+    margin-bottom: 6px;
+  }
+
+  .modul-header h3 {
+    color: var(--white);
+    margin-bottom: 0;
+    font-size: 18px;
+  }
+
+  .modul-header .modul-format {
+    font-size: 13px;
+    color: var(--sage-mid);
+    margin-top: 6px;
+    font-weight: 300;
+  }
+
+  .modul-body {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .sessio {
+    padding: 24px 28px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .sessio:last-child { border-bottom: none; }
+
+  .sessio-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 12px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .sessio-num {
+    background: var(--sage-light);
+    color: var(--sage);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 14px;
+  }
+
+  .tag {
+    font-size: 12px;
+    color: var(--ink-soft);
+    background: var(--sand);
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+    padding: 4px 12px;
+    line-height: 1.4;
+  }
+
+  .sessio-obj {
+    background: var(--accent-light);
+    border-radius: 5px;
+    padding: 12px 16px;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    border-left: 3px solid var(--accent);
+    line-height: 1.6;
+  }
+
+  /* ESTRUCTURA SESSIÓ - TIMELINE */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .tl-item {
+    display: flex;
+    gap: 20px;
+    position: relative;
+  }
+
+  .tl-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 64px;
+    flex-shrink: 0;
+  }
+
+  .tl-time {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--sage);
+    background: var(--sage-light);
+    border-radius: 4px;
+    padding: 4px 6px;
+    text-align: center;
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+    width: 100%;
+    text-align: center;
+  }
+
+  .tl-line {
+    width: 1px;
+    flex: 1;
+    background: var(--rule);
+    margin: 6px 0;
+  }
+
+  .tl-item:last-child .tl-line { display: none; }
+
+  .tl-right {
+    padding: 4px 0 24px;
+    flex: 1;
+  }
+
+  .tl-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .tl-body {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+
+  .tl-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .tl-tag {
+    font-size: 11px;
+    color: var(--sage);
+    background: var(--sage-light);
+    border-radius: 3px;
+    padding: 3px 8px;
+  }
+
+  /* METODOLOGIA */
+  .meto-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  @media (max-width: 580px) {
+    .meto-grid { grid-template-columns: 1fr; }
+  }
+
+  .meto-item {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 7px;
+    padding: 18px 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .meto-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: var(--sage-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 15px;
+  }
+
+  .meto-text {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  /* MATERIALS */
+  .mat-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mat-list li {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 12px 16px;
+  }
+
+  .mat-icon {
+    width: 26px;
+    height: 26px;
+    background: var(--sage-light);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  /* PRESSUPOST */
+  .price-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+
+  @media (max-width: 600px) {
+    .price-grid { grid-template-columns: 1fr; }
+  }
+
+  .price-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .price-card-header {
+    background: var(--ink);
+    color: var(--white);
+    padding: 16px 20px;
+  }
+
+  .price-card-header .label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage-mid);
+    margin-bottom: 4px;
+  }
+
+  .price-card-header .title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  .price-card-body {
+    padding: 20px;
+  }
+
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 14px;
+  }
+  .price-row:last-child { border-bottom: none; }
+
+  .price-key { color: var(--ink-soft); }
+  .price-val { font-weight: 600; color: var(--ink); }
+  .price-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--sage);
+    margin-top: 12px;
+  }
+
+  .price-includes {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 10px;
+    line-height: 1.6;
+    padding-top: 10px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .price-extra {
+    background: var(--accent-light);
+    border: 1px solid #E8C9A0;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .price-extra-label { font-size: 15px; font-weight: 500; color: var(--ink); }
+  .price-extra-sub { font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
+  .price-extra-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .price-total {
+    background: var(--ink);
+    color: var(--white);
+    border-radius: 8px;
+    padding: 24px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .price-total-left .label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage-mid);
+    margin-bottom: 4px;
+  }
+
+  .price-total-left .desc {
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .price-total-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  .price-note {
+    font-size: 13px;
+    color: var(--ink-soft);
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 14px 18px;
+    line-height: 1.65;
+  }
+
+  /* CONTACT FOOTER */
+  .contact-bar {
+    background: var(--ink);
+    margin-top: 60px;
+    padding: 40px 32px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0;
+  }
+
+  .contact-left .label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sage-mid);
+    margin-bottom: 6px;
+  }
+
+  .contact-left h3 {
+    color: var(--white);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 4px;
+  }
+
+  .contact-left .sub {
+    font-size: 13px;
+    color: var(--sage-mid);
+    font-weight: 300;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 6px;
+    padding: 12px 18px;
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+  .contact-btn:hover { background: rgba(255,255,255,0.16); }
+
+  /* OBSERVACIONS */
+  .obs-box {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+  }
+
+  /* DIVIDER */
+  hr.section-rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 32px 0;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 680px) {
+    .header-inner { padding: 40px 20px 36px; }
+    main { padding: 0 20px 60px; }
+    nav { padding: 0 20px; }
+    .contact-bar { padding: 28px 20px; }
+    .modul-header { padding: 18px 20px; }
+    .sessio { padding: 20px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tab-section { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-deco"></div>
+  <div class="header-deco-2"></div>
+  <div class="header-inner">
+    <div class="header-eyebrow">Pla Corresponsables 2026 · Consell Comarcal de la Selva</div>
+    <h1>Formacions en corresponsabilitat, cures i coparentalitat</h1>
+    <p class="header-sub">Àmbit sanitari i famílies de llar d'infants</p>
+    <div class="header-meta">
+      <div class="meta-item">
+        <span class="meta-label">Professional</span>
+        <span class="meta-value">Adrià Fradera Raya</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Àmbit</span>
+        <span class="meta-value">Psicologia relacional, vincles, criança i masculinitats</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Telèfon</span>
+        <span class="meta-value"><a href="tel:691996335">691 996 335</a></span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Email</span>
+        <span class="meta-value"><a href="mailto:info@adriafradera.com">info@adriafradera.com</a></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="nav-wrapper">
+  <nav role="tablist" aria-label="Seccions de la proposta">
+    <button class="nav-tab active" onclick="showTab('presentacio')" role="tab" aria-selected="true">Presentació</button>
+    <button class="nav-tab" onclick="showTab('destinataris')" role="tab">Destinataris</button>
+    <button class="nav-tab" onclick="showTab('actuacions')" role="tab">Actuacions</button>
+    <button class="nav-tab" onclick="showTab('estructura')" role="tab">Estructura sessió</button>
+    <button class="nav-tab" onclick="showTab('metodologia')" role="tab">Metodologia</button>
+    <button class="nav-tab" onclick="showTab('pressupost')" role="tab">Pressupost</button>
+  </nav>
+</div>
+
+<main>
+
+  <!-- TAB 1: PRESENTACIÓ -->
+  <div id="tab-presentacio" class="tab-section active">
+    <div class="section-head">
+      <div class="section-eyebrow">01 · Proposta</div>
+      <h2>Presentació i objectius</h2>
+    </div>
+
+    <div class="intro-highlight">
+      <p>Aquesta proposta té com a finalitat oferir sessions formatives i de sensibilització adreçades a famílies en etapa perinatal i a famílies amb infants de llar d'infants, en el marc de la corresponsabilitat, les cures, la coparentalitat i la implicació activa dels homes en la criança.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:24px;">
+      <p>La proposta parteix d'una mirada propera, pràctica i transformadora, amb l'objectiu d'anar més enllà de la simple transmissió d'informació. Es pretén generar espais de reflexió i canvi real en la manera com les famílies organitzen les cures, reparteixen les responsabilitats i construeixen vincles més igualitaris i saludables.</p>
+      <p style="margin-bottom:0;">L'enfocament de les sessions evita la culpabilització i aposta per una metodologia participativa, vivencial i aplicada, que permeti a les persones participants identificar dinàmiques quotidianes, revisar rols de gènere i construir compromisos concrets de corresponsabilitat.</p>
+    </div>
+
+    <div class="card">
+      <h4>Objectius generals</h4>
+      <ul class="obj-list">
+        <li>Promoure una distribució més equilibrada de les cures, les tasques familiars i la càrrega mental.</li>
+        <li>Afavorir la implicació activa dels homes en la criança, especialment en l'etapa perinatal i en la primera infància.</li>
+        <li>Treballar el pas del model de "pare que ajuda" al model de pare corresponsable i cuidador principal.</li>
+        <li>Facilitar eines pràctiques de comunicació, organització familiar i coparentalitat.</li>
+        <li>Sensibilitzar les famílies sobre l'impacte de les cures en el benestar emocional, la parella i el desenvolupament dels infants.</li>
+        <li>Contribuir a la construcció de masculinitats més igualitàries, presents, cuidadores i responsables.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TAB 2: DESTINATARIS -->
+  <div id="tab-destinataris" class="tab-section">
+    <div class="section-head">
+      <div class="section-eyebrow">02 · A qui va dirigit</div>
+      <h2>Destinataris</h2>
+    </div>
+
+    <p style="margin-bottom:28px;">La proposta s'adreça a dos perfils principals, cadascun amb les seves particularitats i necessitats específiques:</p>
+
+    <div class="dest-grid">
+      <div class="dest-card">
+        <span class="dest-label">Perfil A</span>
+        <h3>Grups ABS</h3>
+        <p style="font-size:14px; margin-bottom:0;">Grups mixtos de prepart i postpart dels ABS. Famílies en etapa d'embaràs, naixement recent o postpart, amb participació de mares, pares i altres figures cuidadores.</p>
+      </div>
+      <div class="dest-card">
+        <span class="dest-label">Perfil B</span>
+        <h3>Famílies de llar d'infants</h3>
+        <p style="font-size:14px; margin-bottom:0;">Mares, pares i figures cuidadores d'infants de 0 a 3 anys, amb especial atenció a l'organització quotidiana de les cures i la càrrega mental.</p>
+      </div>
+    </div>
+
+    <div class="card card-accent">
+      <h4>Flexibilitat de format</h4>
+      <p style="margin-bottom:0; font-size:14.5px;">Les sessions dels ABS poden adaptar-se a grups mixtos, grups només d'homes o formats combinats, segons la composició i necessitats de cada ABS. El mòdul per a famílies de llar d'infants es pot adaptar a una única sessió de 2 hores si el servei ho requereix.</p>
+    </div>
+  </div>
+
+  <!-- TAB 3: ACTUACIONS -->
+  <div id="tab-actuacions" class="tab-section">
+    <div class="section-head">
+      <div class="section-eyebrow">03 · Mòduls</div>
+      <h2>Proposta d'actuacions</h2>
+    </div>
+
+    <!-- MÒDUL 1 -->
+    <div class="modul-block">
+      <div class="modul-header">
+        <div class="modul-label">Mòdul 1 · ABS: prepart i postpart</div>
+        <h3>Del pare ajudant al pare corresponsable: cures, vincle i coparentalitat en l'etapa perinatal</h3>
+        <div class="modul-format">2 sessions presencials de 2 hores · Total: 4 hores per ABS</div>
+      </div>
+      <div class="modul-body">
+        <div class="sessio">
+          <div class="sessio-title">
+            <span class="sessio-num">S1</span>
+            Abans del naixement: preparar la corresponsabilitat
+          </div>
+          <div class="tag-list">
+            <span class="tag">Expectatives parentals</span>
+            <span class="tag">Paper del pare durant l'embaràs</span>
+            <span class="tag">Càrrega mental</span>
+            <span class="tag">Comunicació de parella</span>
+            <span class="tag">Preparació del postpart</span>
+            <span class="tag">Vincle i seguretat</span>
+            <span class="tag">Logística familiar</span>
+          </div>
+          <div class="sessio-obj">
+            <strong>Objectiu:</strong> Ajudar les famílies a anticipar el postpart des d'una mirada corresponsable, evitant que la major part de la planificació, la càrrega emocional i l'organització recaigui automàticament sobre la mare.
+          </div>
+        </div>
+        <div class="sessio">
+          <div class="sessio-title">
+            <span class="sessio-num">S2</span>
+            Postpart: sostenir, cuidar i no desaparèixer
+          </div>
+          <div class="tag-list">
+            <span class="tag">Canvis emocionals i relacionals</span>
+            <span class="tag">Vincle pare-nadó</span>
+            <span class="tag">Tasques visibles i invisibles</span>
+            <span class="tag">Descans i sobrecàrrega</span>
+            <span class="tag">Sexualitat i intimitat</span>
+            <span class="tag">Prevenció desconnexió paterna</span>
+            <span class="tag">Pactes de corresponsabilitat</span>
+          </div>
+          <div class="sessio-obj">
+            <strong>Objectiu:</strong> Facilitar eines perquè la corresponsabilitat es tradueixi en accions concretes durant el postpart, promovent la presència activa dels pares i el benestar emocional de tota la família.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MÒDUL 2 -->
+    <div class="modul-block">
+      <div class="modul-header">
+        <div class="modul-label">Mòdul 2 · Famílies de llar d'infants</div>
+        <h3>Créixer cuidant: corresponsabilitat, límits i coparentalitat en famílies amb infants de 0 a 3 anys</h3>
+        <div class="modul-format">2 sessions presencials de 2 hores · Total: 4 hores per grup</div>
+      </div>
+      <div class="modul-body">
+        <div class="sessio">
+          <div class="sessio-title">
+            <span class="sessio-num">S1</span>
+            Qui cuida, qui pensa i qui sosté? Corresponsabilitat real en famílies amb infants petits
+          </div>
+          <div class="tag-list">
+            <span class="tag">Càrrega mental</span>
+            <span class="tag">Tasques visibles i invisibles</span>
+            <span class="tag">Coparentalitat</span>
+            <span class="tag">Comunicació familiar</span>
+            <span class="tag">Rols de gènere</span>
+            <span class="tag">Implicació dels homes</span>
+          </div>
+          <div class="sessio-obj">
+            <strong>Objectiu:</strong> Fer visible no només qui executa les tasques, sinó també qui les pensa, les anticipa i les organitza, i facilitar eines pràctiques de corresponsabilitat aplicables a casa.
+          </div>
+        </div>
+        <div class="sessio" style="background: var(--sand);">
+          <h4 style="margin-bottom:10px;">Temes de treball en petits grups</h4>
+          <div class="tag-list">
+            <span class="tag">Els matins abans d'anar a la llar</span>
+            <span class="tag">Les nits i el son</span>
+            <span class="tag">Les malalties de l'infant</span>
+            <span class="tag">Les rebequeries</span>
+            <span class="tag">Desacords entre progenitors</span>
+            <span class="tag">Organització del cap de setmana</span>
+            <span class="tag">Relació amb avis i àvies</span>
+            <span class="tag">Temps personal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 4: ESTRUCTURA SESSIÓ -->
+  <div id="tab-estructura" class="tab-section">
+    <div class="section-head">
+      <div class="section-eyebrow">04 · Com funciona</div>
+      <h2>Exemple d'estructura d'una sessió</h2>
+    </div>
+
+    <div class="card" style="margin-bottom:32px;">
+      <p style="margin-bottom:0;">A continuació es detalla l'estructura completa d'una sessió de 2 hores amb famílies de llar d'infants. Aquest model il·lustra el ritme, la metodologia i les eines que s'aplicaran a les sessions.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-time">0–10 min</div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-title">Acollida i enquadrament</div>
+          <div class="tl-body">Presentació de la sessió, del marc de treball i dels objectius. Es planteja com un espai pràctic i no culpabilitzador, orientat a revisar com es reparteixen les cures i com es poden introduir canvis concrets.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">Missatge inicial: "La corresponsabilitat no consisteix només a ajudar, sinó a compartir la responsabilitat de cuidar, pensar, organitzar i sostenir la vida familiar."</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-time">10–30 min</div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-title">Dinàmica inicial: "Qui fa què?"</div>
+          <div class="tl-body">Les famílies identifiquen tasques quotidianes relacionades amb la criança. L'objectiu és fer visible no només qui executa les tasques, sinó també qui les pensa, les anticipa i les organitza.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">Preparar roba</span>
+            <span class="tl-tag">Cites mèdiques</span>
+            <span class="tl-tag">Bany i rutines</span>
+            <span class="tl-tag">Gestionar malalties</span>
+            <span class="tl-tag">Coordinació amb l'escola</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-time">30–55 min</div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-title">Bloc psicoeducatiu</div>
+          <div class="tl-body">S'introdueixen conceptes clau de manera accessible, combinant explicació professional amb exemples reals de la vida familiar.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">Ajudar vs. corresponsabilitzar-se</span>
+            <span class="tl-tag">Càrrega mental</span>
+            <span class="tl-tag">Coparentalitat</span>
+            <span class="tl-tag">Tasques invisibles</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-time">55–75 min</div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-title">Treball en petits grups o per unitats familiars</div>
+          <div class="tl-body">Les famílies treballen a partir de situacions quotidianes concretes. Cada família identifica què funciona, què genera tensió i què es podria repartir millor.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-time">75–100 min</div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-title">Eines pràctiques de corresponsabilitat</div>
+          <div class="tl-body">Es presenten eines aplicables a casa immediatament.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">Reunió familiar setmanal de 15 min</span>
+            <span class="tl-tag">Llista de tasques visibles i invisibles</span>
+            <span class="tl-tag">Pacte de descans i temps personal</span>
+            <span class="tl-tag">Frases per demanar canvis sense atacar</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-time">100–115 min</div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-title">Compromís de canvi</div>
+          <div class="tl-body">Cada família defineix un compromís concret per aplicar durant la setmana següent: redistribuir una rutina, fer una reunió de coordinació, que el pare assumeixi una àrea de cura de manera autònoma, etc.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-time">115–120 min</div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-title">Tancament i valoració</div>
+          <div class="tl-body">Resolució de dubtes i recollida de valoració. Es facilita un qüestionari final per valorar utilitat, aprenentatges i propostes de millora.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 5: METODOLOGIA -->
+  <div id="tab-metodologia" class="tab-section">
+    <div class="section-head">
+      <div class="section-eyebrow">05 · Enfocament</div>
+      <h2>Metodologia i materials</h2>
+    </div>
+
+    <p style="margin-bottom:28px;">La metodologia proposada és <strong>participativa, vivencial i orientada a l'aplicació pràctica</strong>. L'estil de conducció serà proper, clar i respectuós, facilitant canvis realistes, progressius i sostenibles.</p>
+
+    <div class="meto-grid">
+      <div class="meto-item">
+        <div class="meto-icon">📚</div>
+        <div class="meto-text">Psicoeducació breu i accessible</div>
+      </div>
+      <div class="meto-item">
+        <div class="meto-icon">🤝</div>
+        <div class="meto-text">Dinàmiques grupals participatives</div>
+      </div>
+      <div class="meto-item">
+        <div class="meto-icon">💭</div>
+        <div class="meto-text">Preguntes de reflexió guiada</div>
+      </div>
+      <div class="meto-item">
+        <div class="meto-icon">🏠</div>
+        <div class="meto-text">Treball sobre situacions quotidianes reals</div>
+      </div>
+      <div class="meto-item">
+        <div class="meto-icon">⚖️</div>
+        <div class="meto-text">Anàlisi de rols i càrrega mental</div>
+      </div>
+      <div class="meto-item">
+        <div class="meto-icon">🗣️</div>
+        <div class="meto-text">Eines de comunicació i organització familiar</div>
+      </div>
+      <div class="meto-item">
+        <div class="meto-icon">✅</div>
+        <div class="meto-text">Elaboració de compromisos pràctics</div>
+      </div>
+      <div class="meto-item">
+        <div class="meto-icon">📝</div>
+        <div class="meto-text">Espai final de dubtes i valoració</div>
+      </div>
+    </div>
+
+    <hr class="section-rule">
+
+    <h3 style="margin-bottom:20px;">Materials i avaluació</h3>
+
+    <ul class="mat-list">
+      <li><div class="mat-icon">📋</div>Preparació i adaptació dels continguts a cada grup</li>
+      <li><div class="mat-icon">📄</div>Materials de suport per a la sessió</li>
+      <li><div class="mat-icon">🎲</div>Dinàmiques de treball</li>
+      <li><div class="mat-icon">📌</div>Fitxa o esquema de compromís familiar</li>
+      <li><div class="mat-icon">📊</div>Qüestionari breu de valoració final</li>
+      <li><div class="mat-icon">📞</div>Coordinació prèvia amb les persones referents del servei</li>
+    </ul>
+
+    <div class="card card-accent" style="margin-top:24px;">
+      <h4>Retorn qualitatiu opcional</h4>
+      <p style="margin-bottom:0; font-size:14.5px;">En cas que es consideri necessari, es pot elaborar un breu retorn qualitatiu posterior amb observacions generals sobre participació, temes emergents i possibles línies de continuïtat.</p>
+    </div>
+
+    <hr class="section-rule">
+
+    <h3 style="margin-bottom:16px;">Observacions finals</h3>
+    <div class="obs-box">
+      <p style="margin-bottom:14px;">La proposta és adaptable segons les necessitats concretes de cada ABS, llar d'infants o grup participant. Es pot ajustar el contingut en funció de:</p>
+      <ul class="obj-list">
+        <li>Si el grup és mixt o si es vol fer una intervenció més focalitzada en homes.</li>
+        <li>Si es prefereix un format més orientat a famílies en general.</li>
+        <li>Si el servei requereix una única sessió de 2 hores en lloc del mòdul complet.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TAB 6: PRESSUPOST -->
+  <div id="tab-pressupost" class="tab-section">
+    <div class="section-head">
+      <div class="section-eyebrow">06 · Econòmic</div>
+      <h2>Pressupost</h2>
+    </div>
+
+    <p style="margin-bottom:28px;">El pressupost es presenta en format modular per facilitar-ne l'adaptació segons el nombre final d'ABS, grups i sessions que es vulguin desenvolupar.</p>
+
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="price-card-header">
+          <div class="label">Mòdul 1</div>
+          <div class="title">ABS: grups prepart i postpart</div>
+        </div>
+        <div class="price-card-body">
+          <div class="price-row">
+            <span class="price-key">Sessions</span>
+            <span class="price-val">2 × 2 hores</span>
+          </div>
+          <div class="price-row">
+            <span class="price-key">Total hores</span>
+            <span class="price-val">4 h</span>
+          </div>
+          <div class="price-amount">780 €</div>
+          <div class="price-includes">Inclou: coordinació inicial, adaptació de continguts, preparació de materials, impartició presencial i qüestionari breu d'avaluació.</div>
+        </div>
+      </div>
+
+      <div class="price-card">
+        <div class="price-card-header">
+          <div class="label">Mòdul 2</div>
+          <div class="title">Famílies de llar d'infants</div>
+        </div>
+        <div class="price-card-body">
+          <div class="price-row">
+            <span class="price-key">Sessions</span>
+            <span class="price-val">2 × 2 hores</span>
+          </div>
+          <div class="price-row">
+            <span class="price-key">Total hores</span>
+            <span class="price-val">4 h</span>
+          </div>
+          <div class="price-amount">780 €</div>
+          <div class="price-includes">Inclou: coordinació inicial, adaptació de continguts, preparació de materials, impartició presencial i qüestionari breu d'avaluació.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-extra">
+      <div>
+        <div class="price-extra-label">Sessió individual addicional</div>
+        <div class="price-extra-sub">1 sessió presencial · 2 hores</div>
+      </div>
+      <div class="price-extra-amount">390 €</div>
+    </div>
+
+    <div class="card card-accent" style="margin-bottom:20px;">
+      <h4>Preus per ABS o grup</h4>
+      <p style="margin-bottom:0; font-size:14.5px;">Els imports indicats corresponen a cada ABS o grup de manera independent. La proposta és replicable: cada nou ABS o llar d'infants que s'incorpori tindrà el mateix preu per mòdul. Les partides es poden contractar de manera separada i combinada segons les necessitats del Consell Comarcal.</p>
+    </div>
+
+    <div class="price-note">
+      <strong>IVA:</strong> Imports sense IVA. S'aplicarà l'IVA corresponent, si escau, segons la naturalesa fiscal del servei.<br><br>
+      <strong>Desplaçaments:</strong> Els desplaçaments dins la comarca de la Selva queden inclosos en el pressupost, sempre que les sessions es desenvolupin en equipaments municipals o espais acordats prèviament amb el Consell Comarcal.
+    </div>
+  </div>
+
+  <!-- CONTACT BAR (visible a totes les pestanyes) -->
+  <div class="contact-bar">
+    <div class="contact-left">
+      <div class="label">Contacte professional</div>
+      <h3>Adrià Fradera Raya</h3>
+      <div class="sub">Psicologia relacional · Vincles · Criança · Masculinitats</div>
+    </div>
+    <div class="contact-links">
+      <a href="tel:691996335" class="contact-btn">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+        691 996 335
+      </a>
+      <a href="mailto:info@adriafradera.com" class="contact-btn">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        info@adriafradera.com
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  function showTab(name) {
+    document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+    });
+    document.getElementById('tab-' + name).classList.add('active');
+    const tabs = {
+      presentacio: 0, destinataris: 1, actuacions: 2,
+      estructura: 3, metodologia: 4, pressupost: 5
+    };
+    const btn = document.querySelectorAll('.nav-tab')[tabs[name]];
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
